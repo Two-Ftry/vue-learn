@@ -1,0 +1,99 @@
+.addc-box{
+  width: 100%;
+}
+.mt16{
+  margin-top: 0.16rem;
+}
+.customer-item{
+  margin-left: 0.20rem;
+  height: 0.88rem;
+  line-height: 0.88rem;
+  border-bottom: 1px solid #ccc;
+}
+.customer-item-innerbox{
+  position: relative;
+  padding-left: 1.80rem;
+}
+.customer-item-innerbox label{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.80rem;
+}
+.customer-item-innerbox input, .customer-item-innerbox textarea{
+  width: 100%;
+}
+.customer-item.no-border-bottom{
+  border-bottom: none;
+}
+.addc-first-part, .addc-sec-part, .addc-three-part{
+  background-color: #fff;
+}
+.customer-item input, .customer-item textarea{
+  height: 0.70rem;
+  line-height: 0.70rem;
+  font-size: 0.28rem;
+}
+.customer-item textarea{
+  line-height: 0.36rem;
+}
+.save-btn-box{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0.90rem;
+  background-color: blue;
+}
+.save-btn-box button{
+  width: 100%;
+  height: 0.90rem;
+  color: #fff;
+  font-size: 0.28rem;
+  cursor: pointer;
+  text-align: center;
+}
+.textarea-box{
+  position: relative;
+}
+.word-count{
+  position: absolute;
+  bottom: 0;
+  right: 0.05rem;
+  font-size: 0.18rem;
+  color: #ccc;
+}
+/* status box */
+.status-box{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  font-size: 0.28rem;
+}
+.status-box li{
+  padding-left: 0.20rem;
+  width: 100%;
+  height: 0.88rem;
+  line-height: 0.88rem;
+}
+.status-box .status-item-innerbox{
+  position: relative;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+.status-box li i{
+  position: absolute;
+  top: 0.34rem;
+  right: 0.40rem;
+  width: 0.20rem;
+  height: 0.20rem;
+  border-radius: 50%;
+  border: 1px solid blue;
+}
+.status-box li.selected i{
+  background-color: blue;
+}
