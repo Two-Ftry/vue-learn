@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>title</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    {{message}}
+  </div>
+  <div id="app-2">
+    <span v-bind:title="title">Hover your mouse over me for a few seconds to see my dynamically bound title!</span>
+  </div>
+  <div id="app-3">
+    <span v-if="see">这里是app3的内容</span>
+  </div>
+  <div id="app-4">
+    <ul>
+      <li v-for="item in todos">
+        {{item.text}}
+      </li>
+    </ul>
+  </div>
+  <div id="app-5">
+    <p>{{message}}</p>
+    <button type="button" @click="reverseMessage">reverse</button>
+  </div>
+  <div id="app-6">
+    <p>{{message}}</p>
+    <input type="text" name="" v-model="message" value="" />
+  </div>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue33!'
+      }
+    });
+    var app2 = new Vue({
+      el: '#app-2',
+      data: {
+        title: 'here is a title'
+      }
+    });
+    var app3 = new Vue({
+      el: '#app-3',
+      data: {
+        see: true
+      }
+    });
+    var app4 = new Vue({
+      el: '#app-4',
+      data: {
+        todos: [
+          {text: 'Learn javascript'},
+          {text: 'Learn Vue'},
+          {text: 'Build something awesome'}
+        ]
+      }
+    });
+    var app5 = new Vue({
+      el: '#app-5',
+      data: {
+        message: 'Hello Vue.js'
+      },
+      methods: {
+        reverseMessage: function(){
+          this.message = this.message.split('').reverse().join('');
+        }
+      }
+    });
+    var app6 = new Vue({
+      el: '#app-6',
+      data: {
+        message: 'hello vue.js'
+      }
+    });
+  </script>
+</body>
+</html>
