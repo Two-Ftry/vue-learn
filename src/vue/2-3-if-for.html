@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <p v-if="ok">这里为真的内容</p>
+    <p v-else>这里为假的内容</p>
+    <p v-show="ok">这里为真的内容</p>
+    <p v-else>这里为假的内容</p>
+    <template v-if="!ok">
+      <p>item1</p>
+      <p>item2</p>
+      <p>item3</p>
+    </template>
+    <div>
+      <h1>v-for模块</h1>
+      <ul>
+        <li v-for="(book, index) in books">{{index+1}} - {{book.name}}</li>
+      </ul>
+      <ol>
+        <li v-for="n in 3">{{n}}</li>
+      </ol>
+      <ul>
+        <li v-for="(val, key) in obj">{{key}} - {{val}}</li>
+      </ul>
+    </div>
+  </div>
+  <script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      data: {
+        ok: true,
+        books: [
+          {name: 'book1'},
+          {name: 'book2'},
+          {name: 'book3'},
+        ],
+        obj:{
+          name: 'jianfeng_huang',
+          age: 26,
+          graduate: 'guilin'
+        }
+      }
+    });
+  </script>
+</body>
+</html>
