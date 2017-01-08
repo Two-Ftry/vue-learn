@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div>
+      <h2>checkbox</h2>
+      <input type="checkbox"
+              v-model="checked"
+              :true-value="vChecked"
+              :false-value="vunChecked"
+              />
+      <span>{{checked}}</span>
+      <div class="">
+        <input type="checkbox" value="one" v-model="checkeds"/>
+        <input type="checkbox" value="two" v-model="checkeds"/>
+        <input type="checkbox" value="three" v-model="checkeds"/>
+        <p>{{checkeds}}</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        checked: '未选中',
+        vChecked: '选中',
+        vunChecked: '未选中',
+        checkeds: []
+      },
+      methods: {
+
+      }
+    });
+  </script>
+</body>
+</html>
