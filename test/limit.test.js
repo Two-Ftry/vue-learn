@@ -41,23 +41,21 @@ describe('module', function(){
   describe('mock', function(){
     // var _readFile;
     before(function(){
-      // _readFile = fs.readFileSync;
-      // fs.readFileSync = function(filename, encoding, callback){
-      //   // process.nextTick(function(){
-      //   //   callback(new Error("mock readFile error"));
-      //   // });
-      //   throw new Error('mock readFileSync error');
-      // };
       muk(fs, 'readFileSync', function(filename, encoding, callback){
         throw new Error('mock readFileSync error');
       })
     });
     it('get content should not error', function(){
-      lib.getContent('E:/test.txt').should.be.ok();
+      lib.getContent('E:/test.txt').should.be.not.ok();
     });
     after(function(){
-      // fs.readFileSync = _readFile;
       muk.restore();
+    });
+  });
+  //add
+  describe('add', function(){
+    it('add testing', function(){
+      lib.add(-1,1).should.be.equal(1);
     });
   });
 });
