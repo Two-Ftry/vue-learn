@@ -4,7 +4,8 @@
   "description": "vue learn",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha",
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha",
   },
   "repository": {
     "type": "git",
