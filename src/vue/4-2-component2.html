@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <currency-input v-model="currency"></currency-input>
+    <div>
+      {{currency}}
+    </div>
+  </div>
+  <script type="text/javascript">
+    Vue.component('currency-input',{
+      template: '<input ref="input" type="text" :value="currency" @input="check($event)" @focus="selectAll"/>',
+      props:{
+        currency: Number
+      },
+      methods:{
+        check(event){
+          //保留两位小数
+          var val = event.target.value;
+          var formattedValue = this.format(val);
+
+          if(formattedValue != val){
+            this.$refs.input.value = formattedValue;
+          }
+          this.$emit('input', Number(formattedValue));
+        },
+        format(val){
+          var index = val.trim().indexOf('.');
+          var formattedValue;
+          if(index != -1){
+            formattedValue = val.slice(0, val.indexOf('.') + 3);
+          }else{
+            formattedValue = val;
+          }
+          return formattedValue;
+        },
+        selectAll(event){
+          event.target.select();
+        }
+      }
+    });
+    var app = new Vue({
+      el: '#app',
+      data:{
+        currency: 0.00
+      },
+      methods:{
+        changeCurrency(val){
+          this.currency = val;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

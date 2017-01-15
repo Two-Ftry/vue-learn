@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>动态组件</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <button type="button" @click="clickBtn">click</button>
+    <component :is="currentView">
+    </component>
+  </div>
+  <script type="text/javascript">
+    var child1 = {
+      template: '<span style="color: red;">template1</span>'
+    };
+    var child2 = {
+      template: '<span style="color: blue;">template2</span>'
+    };
+    var child3 = {
+      template: '<span style="color: green;">template3</span>'
+    };
+    var app = new Vue({
+      el: '#app',
+      data:{
+        currentView: 't1',
+        index: 1
+      },
+      methods:{
+        clickBtn(){
+          this.index++;
+          this.currentView = 't' + this.index%3;
+        }
+      },
+      components:{
+        t0: child1,
+        t1: child2,
+        t2: child3
+      }
+    });
+  </script>
+</body>
+</html>
