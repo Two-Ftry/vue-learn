@@ -30,7 +30,7 @@ var StatusComponent = Vue.extend({
             </div>',
   data: function(){
     return {
-      status: 'long',
+      status: 'new',
       statusArray: [
         {text: '新建客户', val: 'new'},
         {text: '潜在商机客户', val: 'qianzai'},
@@ -52,8 +52,14 @@ var StatusComponent = Vue.extend({
         val: this.$data.status,
         text: text
       });
-      // console.log(this.$data.status);
       $('.ev-status-box').hide();
+    }
+  },
+  events: {
+    'to-select-status': function(){
+      var status = this.$data.status;
+      $('.ev-status-box li').removeClass('selected');
+      $('.ev-status-box [data-val="' + status + '"]').addClass('selected');
     }
   }
 });
@@ -88,6 +94,7 @@ var vm = new Vue({
     //去选择status
     __toSelectStatus: function(event){
       $('.ev-status-box').show();
+      this.$broadcast('to-select-status');
     }
   },
   events: {
