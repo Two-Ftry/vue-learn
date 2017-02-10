@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Two-Ftry/vue-learn#readme",
   "devDependencies": {
+    "browserify": "^14.0.0",
     "watchify": "^3.9.0"
   }
 }
