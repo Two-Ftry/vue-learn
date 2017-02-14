@@ -8,7 +8,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watchify": "watchify -dv "
+    "watchify": "watchify -p browserify-hmr ./src/main.js -d -o ./public/main.bundle.js -v",
+    "serve": "http-server ./public -a localhost -p 9527",
+    "dev": "npm-run-all --parallel watchify serve"
   },
   "repository": {
     "type": "git",
@@ -21,7 +23,23 @@
   },
   "homepage": "https://github.com/Two-Ftry/vue-learn#readme",
   "devDependencies": {
+    "babel-core": "^6.23.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babelify": "^7.3.0",
     "browserify": "^14.0.0",
+    "browserify-hmr": "^0.3.5",
+    "engine.io": "^2.0.1",
+    "engine.io-client": "^2.0.1",
+    "http-server": "^0.9.0",
+    "npm-run-all": "^4.0.1",
+    "options": "^0.0.6",
+    "parseuri": "^0.0.5",
+    "ultron": "^1.1.0",
     "watchify": "^3.9.0"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
   }
 }
