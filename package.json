@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watchify": "watchify -p browserify-hmr ./src/main.js -d -o ./public/main.bundle.js -v",
-    "serve": "http-server ./public -a localhost -p 9527",
+    "serve": "http-server ./public -o -s -c 1 -a localhost -p 9527",
     "dev": "npm-run-all --parallel watchify serve"
   },
   "repository": {
