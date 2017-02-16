@@ -1,3 +1,6 @@
 [2017-02-15 14:28:32.989] [WARN] log_date - this is a log4js warn
 [2017-02-15 14:28:32.989] [ERROR] log_date - this is a log4js error
 [2017-02-15 14:28:32.989] [FATAL] log_date - this is a log4js fatal
+[2017-02-15 20:51:17.796] [WARN] log_date - this is a log4js warn
+[2017-02-15 20:51:17.796] [ERROR] log_date - this is a log4js error
+[2017-02-15 20:51:17.796] [FATAL] log_date - this is a log4js fatal

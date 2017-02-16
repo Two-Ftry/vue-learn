@@ -6,6 +6,8 @@ log4js.configure(config);
 
 console.log('log4js start');
 
+console.log(process.env.NODE_ENV);
+
 var logFile = log4js.getLogger('log_date');
 
 logFile.trace('this is a log4js trace');
