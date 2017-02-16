@@ -1,3 +1,9 @@
-console.log('gou r d');
+import Vue from 'vue'
+import App from './App.vue'
 
-document.write('学习watchify-ddd4sd');
+console.log(222);
+
+new Vue({
+  el: '#app',
+  render: h => h(App)
+});
