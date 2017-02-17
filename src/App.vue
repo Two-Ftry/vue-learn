@@ -26,6 +26,14 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  mounted(){
+    this.onToCreate();
+  },
+  methods:{
+    onToCreate(){
+      console.log('onTotesting');
+    }
   }
 }
 </script>

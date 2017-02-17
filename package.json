@@ -8,9 +8,10 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watchify": "watchify -vd -p browserify-hmr -e src/main.js -o dist/build.js",
+    "watchify": "watchify -vd -p browserify-hmr -e src/main.js -o public/build.js",
     "serve": "http-server -o -s -c 1 -a localhost",
-    "dev": "npm-run-all --parallel watchify serve"
+    "dev": "npm-run-all --parallel watchify serve",
+    "build": "browserify src/main.js -o dist/build.js"
   },
   "repository": {
     "type": "git",
