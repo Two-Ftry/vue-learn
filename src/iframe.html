@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  iframe 测试页面
+  <button id="btn">点击</button>
+  <script>
+    console.log('hhhhh');
+    console.log('iframe inner:', window.location.href);
+    var btn = document.getElementById('btn');
+    btn.addEventListener('click', function(){
+      window.location.href = './iframe2.html';
+    });
+  </script>
+</body>
+</html>
