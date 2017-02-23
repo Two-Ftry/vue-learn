@@ -13,8 +13,8 @@
     "ecstatic": "ecstatic public -p 8000",
     "dev": "npm-run-all --parallel watchify serve",
     "dev2": "npm-run-all --parallel watchify ecstatic",
-    "build": "cross-env NODE_DEV=production browserify -g envify -t vueify -e src/main.js | uglifyjs > public/build.js",
-    "start": "node ./bin/www"
+    "build": "cross-env NODE_ENV=production browserify -g envify  src/main.js | uglifyjs -c warnings=false -m > public/build.js",
+    "start": "hotnode ./bin/www"
   },
   "repository": {
     "type": "git",
