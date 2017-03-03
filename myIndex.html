@@ -6,12 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>My server render</title>
   <script type="text/javascript" src="/assets/vue.js"></script>
-  <script type="text/javascript" src="/assets/app.js"></script>
+  <script type="text/javascript" src="/assets/myApp.js"></script>
 </head>
 <body>
-  <div id="app">hello~~</div>
+  <div id="app"></div>
   <script type="text/javascript">
-    //TODO
+    if(app){
+      app.$mount('#app');
+    }else{
+      console.log('app is null');
+    }
   </script>
 </body>
 </html>
