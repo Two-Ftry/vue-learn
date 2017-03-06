@@ -23,9 +23,9 @@ var app;
     });
   };
 
-  if(typeof window === 'undefined'){
+  if (typeof module !== 'undefined' && module.exports) {
     module.exports = createApp;
-  }else{
-    app = createApp();
+  } else {
+    this.app = createApp();
   }
 })();

@@ -10,20 +10,30 @@ global.Vue = require('vue');
 
 app.use('/assets', express.static(path.resolve(__dirname, '../assets')));
 
-var layout = fs.readFileSync('./myIndex.html', 'utf-8');
+var layouts = fs.readFileSync('./myIndex.html', 'utf-8').split('<div id="app"></div>');
+var preHtml = layouts[0];
+var postHtml = layouts[1];
 
 var myApp = require('../assets/myApp')();
 
 app.get('*', function(req, res){
-  //字符串形式的响应
-  renderer.renderToString(myApp, function(err, html){
-    if(err){
-        console.error(err);
-        return res.status(500).send('Server Error');
-    }
-    layout = layout.replace('<div id="app"></div>', html);
-    res.send(layout);
+  var stream = renderer.renderToStream(myApp);
+
+  res.write(preHtml);
+
+  stream.on('data', function(chunk){
+    res.write(chunk);
   });
+
+  stream.on('end', function(){
+    res.end(postHtml);
+  });
+
+  stream.on('error', function(error){
+    console.log(error);
+    res.status(500).send('Server Error');
+  });
+
 });
 
 app.listen(5001);
